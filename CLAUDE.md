@@ -104,7 +104,7 @@ cfg.ppo.batchSize = 50000;             // PPO batch size
 cfg.ppo.epochs = 30;                   // PPO epochs per iteration
 cfg.ppo.policy.layerSizes = {256, 256, 256};
 cfg.ppo.critic.layerSizes = {256, 256, 256};
-cfg.device = torch::kCUDA;             // Or kCPU, kAUTO
+cfg.device = torch::kCUDA;             // Or kCPU, kAUTO, kMPS (Mac)
 cfg.renderSendRate = 0.5f;             // Render every N seconds
 cfg.metricsSendRate = 5;               // Metrics every N iterations
 ```
@@ -291,6 +291,8 @@ if (player.eventState.demolish) { /* reward demo */ }
 5. **Git** (for cloning submodules)
 
 ### Build Instructions
+
+> **Note for Mac M3 Users**: See [BUILD_MAC_M3.md](BUILD_MAC_M3.md) for detailed Mac Apple Silicon build instructions, including Metal Performance Shaders (MPS) GPU acceleration setup.
 
 ```bash
 # Clone with submodules
